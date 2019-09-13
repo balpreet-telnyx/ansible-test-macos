@@ -1,0 +1,21 @@
+---
+# To include different playbooks
+# - import_playbook : playbooks/firefox.yml
+# - import_playbook : playbooks/chrome.yml
+# - import_playbook : playbooks/slack.yml
+
+# Example of a slack playbook
+- hosts: local
+  become: yes
+  vars:
+  
+
+  tasks:
+  - name: Check ansible version
+    command: ansible --version
+    register: ansiver
+
+
+  - debug:
+      var: ansiver.stdout_lines 
+    
